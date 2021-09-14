@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+  const rootElement = document.getElementById("root");
+
+
+  const Print = ({title, subTitle, children}) =>
+          (<>
+            <h1>{title}</h1>
+            <h3>{subTitle}</h3>
+            {children}
+          </>)
+
+  const element = (
+          <>
+            <Print title="test" subTitle="ttttt" >
+              {Print({title:"Bad", subTitle:"bad", children:"hi"})}
+            </Print>
+          </>
+  )
+
+  ReactDOM.render(element, rootElement);
+</script>
+
+</body>
+</html>
