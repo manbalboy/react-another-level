@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<!--<script>-->
+<!--    const rootElement = document.getElementById("root");-->
+
+<!--    function random() {-->
+<!--        const number = Math.floor(Math.random() * (10 - 1) + 1);-->
+<!--        const element = `-->
+<!--            <button>${number}</button>-->
+<!--        `;-->
+<!--        rootElement.innerHTML = element;-->
+<!--    }-->
+
+<!--    setInterval(random, 1000)-->
+
+<!--</script> -->
+<script type="text/babel">
+
+    const rootElement = document.getElementById("root");
+
+    function random() {
+        //포커스를 주었을때 리엑트는 버튼을 재 랜더링을 하지않고 글씨만 바뀜
+        const number = Math.floor(Math.random() * (10 - 1) + 1);
+        const element = (
+            <>
+                <button>{number}</button>
+            </>);
+        ReactDOM.render(element, rootElement);
+    }
+
+    setInterval(random, 1000)
+
+</script>
+
+</body>
+</html>
