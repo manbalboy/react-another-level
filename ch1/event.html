@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const rootElement = document.getElementById("root");
+    const word = "hello world1";
+    const element = <h1 onClick={() => {alert(1)}} className="title">{word}</h1>
+    ReactDOM.render(element,rootElement);
+</script>
+
+</body>
+</html>
