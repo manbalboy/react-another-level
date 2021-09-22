@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+    const rootElement = document.getElementById("root");
+
+    function userLocalStorage(itemName, value = "") {
+        const [state, setState] = React.useState(() => window.localStorage.getItem(itemName) || value);
+
+        //두번째 인자를 안넣으면 상태가바뀔때마다 []만 넣으면 처음 한번 []안에 상태를 넣르면 그상태값이 변할때
+        React.useEffect(() => {
+            window.localStorage.setItem(itemName, state)
+        }, [state]);
+
+        return [state, setState];
+    }
+
+    const App = () => {
+        const [keyword, setKeyword] = userLocalStorage("keyword");
+        const [result, setResult] = userLocalStorage("result");
+        const [typing, setTyping] = userLocalStorage("typing", false);
+
+
+        function handleChange(event) {
+            setKeyword(event.target.value);
+            setTyping(true);
+        }
+
+        function handleClick() {
+            setTyping(false);
+            setResult(`We find results of ${keyword}`)
+        }
+
+        return (
+            <>
+                <input onChange={handleChange}/>
+                <button onClick={handleClick}>search</button>
+                <p>
+                    {typing ? `Looking for....${keyword}` : result}
+                </p>
+            </>
+        )
+    }
+
+    ReactDOM.render(<App/>, rootElement)
+
+
+</script>
+</body>
+</html>
