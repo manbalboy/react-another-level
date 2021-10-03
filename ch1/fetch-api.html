@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+    const rootElement = document.getElementById("root");
+
+
+    const App = () => {
+
+        const [data, setData] = React.useState(null);
+        const [error, setError] = React.useState(null);
+
+        React.useEffect(() => {
+            fetch('https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    setData(data.data);
+                })
+                .catch(err=> {
+                    console.log(err);
+                    setError(err);
+                });
+        }, []);
+
+        if(error != null) {
+            return <p>{error.message}</p>
+        }
+
+        if (data === null) {
+            return <p>Loading...</p>
+        }
+
+        return (
+            <>
+                <p>People</p>
+
+                {data?.people.map((person, index) => {
+                    return (
+                        <div key={index}>
+                            < p> {person.name}</p>
+                            <p>{person.age}</p>
+                        </div>
+                    )
+                })}
+
+            </>
+        )
+    }
+
+    ReactDOM.render(<App/>, rootElement);
+</script>
+
+</body>
+</html>
