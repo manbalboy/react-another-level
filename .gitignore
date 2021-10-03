@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/react,webstorm+all,visualstudiocode,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=react,webstorm+all,visualstudiocode,node
+# Created by https://www.toptal.com/developers/gitignore/api/node,react,webstorm+all,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,react,webstorm+all,visualstudiocode
 
 ### Node ###
 # Logs
@@ -121,6 +121,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
 
 ### react ###
 .DS_*
@@ -243,4 +247,4 @@ modules.xml
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.toptal.com/developers/gitignore/api/react,webstorm+all,visualstudiocode,node
+# End of https://www.toptal.com/developers/gitignore/api/node,react,webstorm+all,visualstudiocode
