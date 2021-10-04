@@ -35,7 +35,7 @@ const comment = {
     avatarUrl: "https://placekitten.com/g/64/64",
   },
 };
-export default function Extaction() {
+export default function Extraction() {
   return (
     <Comment date={comment.date} text={comment.text} author={comment.author} />
   );
