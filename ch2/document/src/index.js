@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Event from "./components/2-7-event/Event";
+// import Event from "./components/2-7-event/Event";
+import Condition from "./components/2-8-ConditionalRendering/Condition";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Event />
+    <Condition />
   </React.StrictMode>,
   document.getElementById("root")
 );
