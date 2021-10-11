@@ -4,11 +4,12 @@ import "./index.css";
 // import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import Event from "./components/2-7-event/Event";
-import Condition from "./components/2-8-ConditionalRendering/Condition";
+// import Condition from "./components/2-8-ConditionalRendering/Condition";
+import ControlledFormComponent from "./components/2-10-form/ControlledFormComponent";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Condition />
+    <ControlledFormComponent />
   </React.StrictMode>,
   document.getElementById("root")
 );
