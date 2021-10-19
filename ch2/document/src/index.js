@@ -5,11 +5,16 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // import Event from "./components/2-7-event/Event";
 // import Condition from "./components/2-8-ConditionalRendering/Condition";
-import ControlledFormComponent from "./components/2-10-form/ControlledFormComponent";
+// import ControlledFormComponent from "./components/2-10-form/ControlledFormComponent";
+import State from "./components/3-3.Hooks/State";
+import Reducer from "./components/3-3.Hooks/Reducer";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ControlledFormComponent />
+    <Reducer />
+
+    <State />
+    {/*<ControlledFormComponent />*/}
   </React.StrictMode>,
   document.getElementById("root")
 );
