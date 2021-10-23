@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 // import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import WelcomeDialog from "./components/3-5.Composition/WelcomeDialog";
+import ThankYouDialog from "./components/3-6.Composition2/ThankYouDialog";
 
 ReactDOM.render(
   <React.StrictMode>
-    <WelcomeDialog />
+    <ThankYouDialog />
   </React.StrictMode>,
   document.getElementById("root")
 );
