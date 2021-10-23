@@ -3,11 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 // import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ThankYouDialog from "./components/3-6.Composition2/ThankYouDialog";
+import Input from "./components/3-7.HOC/Input";
+import Button from "./components/3-7.HOC/Button";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThankYouDialog />
+    <Input />
+    <br />
+    <br />
+    <Button />
   </React.StrictMode>,
   document.getElementById("root")
 );
